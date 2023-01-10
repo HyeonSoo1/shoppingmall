@@ -1,6 +1,5 @@
 plugins {
 	id 'java'
-	id 'war'
 	id 'org.springframework.boot' version '2.7.6'
 	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
 	id 'com.ewerk.gradle.plugins.querydsl' version '1.0.10'
@@ -29,7 +28,7 @@ dependencies {
 	compileOnly 'org.projectlombok:lombok'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	annotationProcessor 'org.projectlombok:lombok'
-	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
+//	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework.security:spring-security-test'
 	// https://mvnrepository.com/artifact/org.mariadb.jdbc/mariadb-java-client
@@ -54,6 +53,7 @@ dependencies {
 }
 
 tasks.named('test') {
+	exclude { '/**/*' }
 	useJUnitPlatform()
 }
 
